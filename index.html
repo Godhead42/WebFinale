@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer40k Wiki</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/6bf418ecda.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="container"> 
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6">
+                    <div class="logo mr-3">
+                        <a href="index.html"><img src="img/lo.png" alt="#" class="img-fluid"> </a>
+                    </div>
+                </div>                
+                <div class="col-md-6 col-6 text-left my-3">
+                    <h1 class="text-with-outline" style="font-size: 30px; margin-top: 10px;">Welcome to the future where War goes on forever
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md" style="z-index: 1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center flex-wrap mx-3 px-5" id="navbarSupportedContent">
+                <ul class="navbar-nav mt-auto justify-content-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Imperium of man.html">IMPERIUM OF MAN
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="God-empror.html">Emperor of Mankind</a></li>
+                                <li><a class="dropdown-item" href="Marines.html">Space Marines</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  text-with-outline" href="Chaos.html">
+                            CHAOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Khorne.html">Khorne</a></li>
+                                <li><a class="dropdown-item" href="Tzeench.html">Tzeentch</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Necrons.html">NECRONS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Sareh.html">Sareh the Silent</a></li>
+                                <li><a class="dropdown-item" href="Trazyn.html">Trazyn the Infinite</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Xenos.html">XENOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Eldars.html">Eldars</a></li>
+                                <li><a class="dropdown-item" href="Tyranids.html">Tyranids</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-expand-md mr-5" style="z-index: 1; top: 0;">
+                <div class="cart-icon-container">
+                    <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i></a>
+                   <div class="cart-badge"></div> 
+                </div>
+                <form class="form-inline my-2 my-lg-0"> 
+                    <button class="btn btn-light ml-2"><a style="text-decoration: none; color: black;" href="registration.html">Sign Up</a></button> 
+                    <button class="btn btn-light ml-2"><a style="text-decoration: none; color: black;" href="login.html">Sign In</a></button> 
+                </form> 
+            </nav>
+        </nav>
+    </header>
+
+    <div class="d-flex justify-content-center" style="background-size: 1000px; background-attachment: fixed; width: 100%;">
+        <div class="mb-5" style="width: 85%; background-color: black;">
+        <h3 class="mt-4 ml-5">Home</h3>
+        <div class="row mx-1">
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered frame frame-1 mx-auto ml-md-4" style="width: 95%;">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-justify text-center my-3" style="font-size: 30px; color: white;">Welcome to fan Wiki of</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="text-justify text-center my-3">
+                                    <img src="img/lo.png" alt="#">
+                                    <p style="color: white;">Warhammer40k for those who are not afraid to drown in the abyss of fear and chaos</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-justify text-center my-3">
+                                    <div id="imageText" class="mb-3">
+                                        <p style="color: white;">So far 0 articles since 2023</p>
+                                    </div>
+                                    <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="img/necrons.jpg" alt="Image 1" class="img-fluid" title="Necrons">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="img/battleSis.jpg" alt="Image 2" class="img-fluid" title="Battle Sisters">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="img/demon.jpeg" alt="Image 3" class="img-fluid" title="Demons">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="img/orks.jpg" alt="Image 4" class="img-fluid" title="Orks">
+                                            </div>
+                                        </div>
+                            
+                                        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            
+            <div class="right col-md-4">
+                <div>
+                    <table class="frame frame-2 mx-auto ml-md-4" style="height: 400px; width: 90%;">
+                        <tbody>
+                            <tr>
+                                <td class="text-justify text-center my-3">
+                                    <img src="img/hammer.png" alt="#" style="max-width: 250px; max-height: 380px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <p>►Warhammer40k Wiki◄</p>
+                                    <p><a href="Fanrasy.html">Warhammer 40k Fantasy</a></p>
+                                    <p><a href="https://en.wikipedia.org/wiki/Warhammer_40,000">Wikihammer 40k (ESP)</a></p>
+                                    <p><a href="Sigmaroteca.html">Sigmaroteca (ESP)</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="frame frame-3 mx-auto ml-md-4" style="height: 00px; width: 90%;">
+                            <thead>
+                                <tr>
+                                    <th class="text-justify text-center my-3" style="font-size: 24px;">Featured Video</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-justify text-center my-3">
+                                        <img src="img/eagle.png" alt="#" style="max-width: 250px; max-height: 380px;">
+
+                                        <video controls autoplay="false" style="max-width: 250px; max-height: 380px;">
+                                            <source src="video/videoplayback (1).3gpp" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <video controls autoplay="false" style="max-width: 250px; max-height: 380px;">
+                                            <source src="video/videoplayback.3gpp" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+                <div class="col-md-8">
+                    <table class="frame frame-4 mx-auto mt-4 ml-md-4" style="width: 96%;">
+                        <tr>
+                            <td colspan="3" class="h3 text-justify text-center my-3" style="color: rgb(157, 157, 238); font-family: 'Mooli', sans-serif;">
+                                <p>Next content will be in</p>
+                            </td>
+                        </tr>
+                        <tr class="h3 text-justify text-center my-3" style="color: rgb(157, 157, 238); font-family: 'Mooli', sans-serif;">
+                            <td class="mx-auto w-100 text-justify text-center my-3">
+                                <div id="countdown" class="container countdown text-center w-100 mx-auto justify-content-center" style="display: flex;">
+                                    <div class="countdown-item" style="margin-right: 10px;">
+                                        <span id="days" class="countdown-number"></span>
+                                        <span class="countdown-label">Days</span>
+                                    </div>
+                                    <div class="countdown-item" style="margin-right: 10px;">
+                                        <span id="hours" class="countdown-number"></span>
+                                        <span class="countdown-label">Hours</span>
+                                    </div>
+                                    <div class="countdown-item" style="margin-right: 10px;">
+                                        <span id="minutes" class="countdown-number"></span>
+                                        <span class="countdown-label">Minutes</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="seconds" class="countdown-number"></span>
+                                        <span class="countdown-label">Seconds</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                
+        
+            <div class="col-md-8">
+                <table class="frame frame-4 mx-auto ml-md-4"  style="width: 96%;" >
+                    <tr>
+                        <td colspan="3" class="h3 text-justify text-center my-3" style="color: rgb(157, 157, 238); font-family: 'Mooli', sans-serif;">
+                            <p>Warhammer 40,000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-justify text-center my-3">
+                            <img src="img/eagle1.png" alt="#" style="width: 20%">
+                        </td>
+                    </tr>
+                    <tr style="line-height: 1.5; text-align: justify">
+                        <td colspan="3">
+                            <p class="text-justify text-center my-3">In the 41st millennium, the Imperium of Man, a totalitarian human empire, is beset by countless threats. Humanity is ruled by the god-like Emperor, who sits on a life-sustaining Golden Throne, and the state religion is the worship of the Emperor as a deity.</p>
+                        </td>
+                    </tr>
+                    <tr style="line-height: 1.5; text-align: justify">
+                        <td colspan="3" >
+                            <p class="text-justify text-center my-3">However, the gravest menace emanates from within—the heretical forces of Chaos, led by malevolent deities intent on corrupting and obliterating the Imperium. Chaos Space Marines, mutated cultists, and daemonic entities compose their formidable ranks.To combat these threats. </p>
+                        </td>
+                    </tr>
+                    <tr style="line-height: 1.5; text-align: justify">
+                        <td colspan="3" >
+                            <p class="text-justify text-center my-3">Amidst this bleak reality, various factions perpetually clash. The Eldar, once a formidable civilization, grapple with their descent into decline, holding onto ancient knowledge while battling their darker inclinations. The Orks, a belligerent greenskin species, are driven by an inherent love for violence, sowing chaos wherever they roam.The Tyranids, an extragalactic menace, consume all life in their path, rendering worlds desolate. Meanwhile, the ancient Necrons, robotic warriors, awaken from eons of slumber, determined to reclaim their lost dominion.</p>
+                        </td>
+                    </tr>
+                    <tr style="line-height: 1.5; text-align: justify">
+                        <td colspan="3" >
+                            <p class="text-justify text-center my-3">Despite overwhelming odds and ceaseless strife, tales of heroism and defiance endure. The Adeptus Astartes, genetically engineered and clad in formidable power armor, stand as humanity's bastion against encroaching darkness. The Imperial Guard, often numbering in the billions, valiantly defends their worlds. The enigmatic Inquisition ruthlessly purges heresy and corruption.                </p>
+                        </td>
+                    </tr>
+                    <tr style="line-height: 1.5; text-align: justify">
+                        <td colspan="3">
+                            <p class="text-justify text-center my-3">As the grim tapestry, it paints a haunting portrait of a universe where survival is a daily struggle, where the cost of victory is measured in lives. In this galaxy of eternal warfare, distinctions between heroes and villains blur, leaving only an unwavering quest for survival amid unimaginable horrors.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="h3 text-justify text-center my-3">
+                            <p><a href="books.html" style="text-decoration: none;">Books of Warhammer 40,000</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Marines.html"><img class="card-img-top" src="img/image1.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Marines.html" style="text-decoration: none;">Space Marines</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="God-empror.html"><img class="card-img-top" src="img/image2.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="God-empror.html" style="text-decoration: none;">God Emperor</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Orks.html"><img class="card-img-top" src="img/image3.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Orks.html" style="text-decoration: none;">Ork Boyz</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Tyranids.html"><img class="card-img-top" src="img/image5.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Tyranids.html" style="text-decoration: none;">Tyranids</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Adeptus Meca.html"><img class="card-img-top" src="img/image6.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Adeptus Meca.html" style="text-decoration: none;">Adeptus Mechanicus</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Eldars.html"><img class="card-img-top" src="img/image7.jpeg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Eldars.html" style="text-decoration: none;">Eldars</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Primarcs.html"><img class="card-img-top" src="img/image8.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Primarcs.html" style="text-decoration: none;">Primarchs</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="my-3 col-6 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="Tau.html"><img class="card-img-top" src="img/image9.jpg" alt="Card image cap" style="height: 170px;"></a>
+                                            <div class="card-body py-0" style="background-color: rgb(29, 29, 136); height: 100%;">
+                                                <h5 class="card-title text-white text-lg"><a class="text-white" href="Tau.html" style="text-decoration: none;">T'au Empire</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="3" class="h3 text-justify text-center my-3" >
+                            <p><a href="#" style="text-decoration: none;">The Galaxy of Warhammer 40,000</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <img src="img/GalaxyMap.jpg" alt="#">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p  class="mt-4 ml-5">Community content is made available under a CC-BY-SA license unless otherwise noted </p>   
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    <footer class="global-footer" class="bg-dark text-center py-3" style="background-color: rgb(73, 36, 109);">
+        <div class="container">
+            <div class="footer-content row justify-content-between">
+                <div class="col-12 col-md-3 my-3">
+                    <h1>Follow Us</h1>
+                    <br>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>                            
+                    </a>
+                    <p><a href="#">Instagram</a></p>
+
+                    <a href="#">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <p><a href="#">Telegram</a></p>
+                    <a href="#"> 
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <p><a href="https://youtu.be/dQw4w9WgXcQ?si=FfG0YGwoxwHKT5V6">YouTube</a></p>
+                </div>
+
+                <div class="col-12 col-md-5 my-4">
+                    <h1 data-bs-toggle="collapse" data-bs-target="#welcome" class="visible-sm collapsed">About Us</h1>
+                    <p id="welcome" class="collapse">Welcome to the official website of Warhammer 40,000 - a world plunged into a dark future ruled by war and chaos. We are passionate fans of this epic universe, and it is our mission to provide you with everything you need to immerse yourself in this exciting world.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/sliderscript.js"></script>  
+    <script src="js/countdown.js"></script>
+    <script src="js/updateCart.js"></script>
+
+</body>
+</html>

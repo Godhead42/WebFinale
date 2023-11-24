@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/6bf418ecda.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
+    <link rel="stylesheet" href="css/tableStyle.css">
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/updateCart.js"></script>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="container"> 
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6">
+                    <div class="logo mr-3">
+                        <a href="index.html"><img src="img/lo.png" alt="#" class="img-fluid"> </a>
+                    </div>
+                </div>                
+                <div class="col-md-6 col-6 text-left my-3">
+                    <h1 class="text-with-outline" style="font-size: 30px; margin-top: 10px;">Welcome to the future where War goes on forever
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md" style="z-index: 1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center flex-wrap mx-3 px-5" id="navbarSupportedContent">
+                <ul class="navbar-nav mt-auto justify-content-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Imperium of man.html">IMPERIUM OF MAN
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="God-empror.html">Emperor of Mankind</a></li>
+                                <li><a class="dropdown-item" href="#">Space Marines</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  text-with-outline" href="Chaos.html">
+                            CHAOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Khorne</a></li>
+                                <li><a class="dropdown-item" href="#">Tzeentch</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Necrons.html">NECRONS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Sareh the Silent</a></li>
+                                <li><a class="dropdown-item" href="#">Trazyn the Infinite</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Xenos.html">XENOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Eldars</a></li>
+                                <li><a class="dropdown-item" href="#">Tyranids</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <div class="cart-icon-container">
+                    <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i></a>
+                   <div class="cart-badge"></div> 
+                </div>
+            </div>
+        </nav>
+		</header>
+
+    <div class="d-flex justify-content-center" style="background-size: 1000px; background-attachment: fixed; width: 100%;">
+        <div class="mb-5" style="width: 85%; background-color: black; overflow-x: auto;">
+            <div class="row mx-1">
+                 <div id="userList">
+                        <h3>Users:</h3>
+                        <div class="table-responsive">
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTableBody">
+                                    <!-- Цикл для отображения только имени пользователя и пароля -->
+                                    <script>
+                                        const userTableBody = document.getElementById('userTableBody');
+                                        for (let i = 0; i < localStorage.length; i++) {
+                                            const storedUsername = localStorage.key(i);
+                                            const storedPassword = localStorage.getItem(storedUsername);
+                                            userTableBody.innerHTML += `
+                                                <tr>
+                                                    <td>${storedUsername}</td>
+                                                    <td>${storedPassword}</td>
+                                                    <td><button onclick="editUser('${storedUsername}', '${storedPassword}')">Edit</button></td>
+                                                    <td><button onclick="deleteUser('${storedUsername}')">Delete</button></td>
+                                                </tr>
+                                            `;
+                                        }
+
+                                        function editUser(username, password) {
+                                            const newUsername = prompt('Enter your new username:', username);
+                                            const newPassword = prompt('Enter the new user password:', password);
+                                            if (newUsername !== null && newPassword !== null) {
+                                                localStorage.removeItem(username);
+                                                localStorage.setItem(newUsername, newPassword);
+                                                alert('Changes saved.');
+                                                window.location.reload();
+                                            }
+                                        }
+
+                                        function deleteUser(username) {
+                                            if (confirm(`Are you sure you want to delete the user ${username}?`)) {
+                                                localStorage.removeItem(username);
+                                                alert(`User ${username} has been deleted.`);
+                                                window.location.reload();
+                                            }
+                                        }
+                                    </script>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+</body>
+<footer class="global-footer" class="bg-dark text-center py-3" style="background-color: rgb(73, 36, 109);">
+    <div class="container">
+        <div class="footer-content row justify-content-between">
+            <div class="col-12 col-md-3 my-3">
+                <h1>Follow Us</h1>
+                <br>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>                            
+                </a>
+                <p><a href="#">Instagram</a></p>
+
+                <a href="#">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <p><a href="#">Telegram</a></p>
+                <a href="#"> 
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <p><a href="https://youtu.be/dQw4w9WgXcQ?si=FfG0YGwoxwHKT5V6">YouTube</a></p>
+            </div>
+
+            <div class="col-12 col-md-5 my-4">
+                <h1 data-bs-toggle="collapse" data-bs-target="#welcome" class="visible-sm collapsed">About Us</h1>
+                <p id="welcome" class="collapse">Welcome to the official website of Warhammer 40,000 - a world plunged into a dark future ruled by war and chaos. We are passionate fans of this epic universe, and it is our mission to provide you with everything you need to immerse yourself in this exciting world.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

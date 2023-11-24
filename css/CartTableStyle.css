@@ -1,0 +1,77 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+@media only screen and (max-width: 600px) {
+    th, td {
+        padding: 10px;
+    }
+}
+
+.book {
+    width: 24%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.book-cover {
+    height: 70%;
+    background-color: #000000;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover img {
+    max-width: 100%; 
+    object-fit: contain; 
+    object-fit: cover; 
+    transition: 0.2s ease;
+}
+
+.book-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.remove-btn-container {
+    margin-top: auto; 
+}
+
+.book-cover:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .book {
+        width: 100%;
+    }
+
+    .book-details {
+        font-size: 14px; /* Изменение размера шрифта для текста в мобильном режиме */
+    }
+
+    .remove-btn-container {
+        font-size: 14px; /* Изменение размера шрифта для кнопки "Add to Cart" в мобильном режиме */
+    }
+}

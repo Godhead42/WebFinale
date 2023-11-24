@@ -1,0 +1,44 @@
+/* Добавьте этот CSS для таблицы корзины */
+#cartDisplay table {
+    width: 100%;
+    font-family: sans-serif;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px #0000001a;
+    margin-top: 20px;
+  }
+  
+  #cartDisplay th,
+  #cartDisplay td {
+    background-color: #ffffff33;
+    padding: 15px;
+    color: #fff;
+  }
+  
+  #cartDisplay th {
+    text-align: left;
+  }
+  
+  #cartDisplay thead th {
+    background-color: #55608f;
+  }
+  
+  #cartDisplay tbody tr:hover {
+    background-color: #ffffff4d;
+  }
+  
+  #cartDisplay tbody td {
+    position: relative;
+  }
+  
+  #cartDisplay tbody td:hover:before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff33;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    z-index: -1;
+  }
+  

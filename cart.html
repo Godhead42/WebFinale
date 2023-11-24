@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отображение корзины пользователя</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/6bf418ecda.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/CartTableStyle.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="container"> 
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6">
+                    <div class="logo mr-3">
+                        <a href="index.html"><img src="img/lo.png" alt="#" class="img-fluid"> </a>
+                    </div>
+                </div>                
+                <div class="col-md-6 col-6 text-left my-3">
+                    <h1 class="text-with-outline" style="font-size: 30px; margin-top: 10px;">Welcome to the future where War goes on forever
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md" style="z-index: 1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center flex-wrap mx-3 px-5" id="navbarSupportedContent">
+                <ul class="navbar-nav mt-auto justify-content-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Imperium of man.html">IMPERIUM OF MAN
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="God-empror.html">Emperor of Mankind</a></li>
+                                <li><a class="dropdown-item" href="Marines.html">Space Marines</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  text-with-outline" href="Chaos.html">
+                            CHAOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Khorne.html">Khorne</a></li>
+                                <li><a class="dropdown-item" href="Tzeench.html">Tzeentch</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Necrons.html">NECRONS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Sareh.html">Sareh the Silent</a></li>
+                                <li><a class="dropdown-item" href="Trazyn.html">Trazyn the Infinite</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-with-outline" href="Xenos.html">XENOS
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Eldars.html">Eldars</a></li>
+                                <li><a class="dropdown-item" href="Tyranids.html">Tyranids</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-expand-md mr-5" style="z-index: 1; top: 0;">
+                <div class="cart-icon-container">
+                    <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i></a>
+                   <div class="cart-badge"></div> 
+                </div>
+                <form class="form-inline my-2 my-lg-0"> 
+                    <button class="btn btn-light ml-2"><a style="text-decoration: none; color: black;" href="registration.html">Sign Up</a></button> 
+                    <button class="btn btn-light ml-2"><a style="text-decoration: none; color: black;" href="login.html">Sign In</a></button> 
+                </form> 
+            </nav>
+        </nav>
+    </header>
+
+    <div class="d-flex justify-content-center" style="background-size: 1000px; background-attachment: fixed; width: 100%;">
+        <div class="mb-5" style="width: 85%; background-color: black;">
+            <div class="row mx-1">
+                <div class="col-md-8">
+                  <br> 
+                  <div id="cartDisplay">Корзина пользователя будет здесь</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+    const cartKey = `${username}_cart`;
+    let cartDisplayElement = document.getElementById('cartDisplay');
+    let cartItems = [];
+
+    try {
+        cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
+    } catch (error) {
+        console.error('Ошибка разбора корзины пользователя:', error);
+    }
+
+    function renderCart() {
+        let cartDisplayHTML = '';
+
+        if (cartItems.length > 0) {
+            cartItems.forEach(item => {
+                cartDisplayHTML += `
+                <div class="book">
+                    <div class="book-cover">
+                        <img src="${item.cover}" alt="${item.title} Cover">
+                    </div>
+                    <div class="book-details">
+                        <p>${item.title}</p>
+                        <p>Price: $${item.price}</p>
+                        <div class="quantity-controls">
+                            <button class="btn btn-info btn-sm changeQuantityButton" data-title="${item.title}" data-action="decrease">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="btn btn-success btn-sm changeQuantityButton" data-title="${item.title}" data-action="increase">+</button>
+                        </div>
+                        <i class="fa-solid fa-trash changeQuantityButton" data-title="${item.title}" data-action="remove" ы></i>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <hr>
+                `;
+            });
+        } else {
+            cartDisplayHTML = 'Корзина пользователя пуста';
+        }
+
+        cartDisplayElement.innerHTML = cartDisplayHTML;
+    }
+
+    function updateCart(action, title) {
+        let existingItemIndex = cartItems.findIndex(item => item.title === title);
+
+        switch (action) {
+            case 'increase':
+                if (existingItemIndex !== -1) {
+                    cartItems[existingItemIndex].quantity++;
+                } else {
+                    cartItems.push({ title, quantity: 1 });
+                }
+                break;
+            case 'decrease':
+                if (existingItemIndex !== -1) {
+                    cartItems[existingItemIndex].quantity = Math.max(1, cartItems[existingItemIndex].quantity - 1);
+                }
+                break;
+            case 'remove':
+                cartItems = cartItems.filter(item => item.title !== title);
+                break;
+            default:
+                break;
+        }
+
+        localStorage.setItem(cartKey, JSON.stringify(cartItems));
+        renderCart();
+        updateCartBadge();
+    }
+
+    cartDisplayElement.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.classList.contains('changeQuantityButton')) {
+            const title = target.getAttribute('data-title');
+            const action = target.getAttribute('data-action');
+            updateCart(action, title);
+        }
+    });
+
+    function addToCart(title, price, cover) {
+        const cartKey = `${username}_cart`;
+        let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+        const existingItemIndex = cart.findIndex(item => item.title === title);
+
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity++;
+        } else {
+            cart.push({
+                title,
+                quantity: 1,
+                price, 
+                cover
+            });
+        }
+
+        localStorage.setItem(cartKey, JSON.stringify(cart));
+
+        alert('Book added to cart.');
+    }
+
+    const addToCartButtons = document.querySelectorAll('.addToCartButton');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const bookDetails = button.closest('.book-details');
+            const title = bookDetails.querySelector('p:nth-child(1)').textContent.trim();
+            const price = parseFloat(bookDetails.querySelector('p:nth-child(2)').textContent.replace('Price: $', ''));
+            const cover = bookDetails.previousElementSibling.querySelector('img').src;
+
+            addToCart(title, price, cover);
+            updateCartBadge();
+            renderCart();
+        });
+    });
+
+    function updateCartBadge() {
+        const cartBadgeElement = document.querySelector('.cart-badge');
+        if (cartBadgeElement) {
+            cartBadgeElement.textContent = cartItems.reduce((total, item) => total + item.quantity, 0).toString();
+        }
+    }
+
+    renderCart();
+    updateCartBadge();
+});
+
+
+    </script>
+</body>
+
+  <footer class="global-footer" class="bg-dark text-center py-3" style="background-color: rgb(73, 36, 109);">
+    <div class="container">
+        <div class="footer-content row justify-content-between">
+            <div class="col-12 col-md-3 my-3">
+                <h1>Follow Us</h1>
+                <br>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>                            
+                </a>
+                <p><a href="#">Instagram</a></p>
+
+                <a href="#">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <p><a href="#">Telegram</a></p>
+                <a href="#"> 
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <p><a href="https://youtu.be/dQw4w9WgXcQ?si=FfG0YGwoxwHKT5V6">YouTube</a></p>
+            </div>
+
+            <div class="col-12 col-md-5 my-4">
+                <h1 data-bs-toggle="collapse" data-bs-target="#welcome" class="visible-sm collapsed">About Us</h1>
+                <p id="welcome" class="collapse">Welcome to the official website of Warhammer 40,000 - a world plunged into a dark future ruled by war and chaos. We are passionate fans of this epic universe, and it is our mission to provide you with everything you need to immerse yourself in this exciting world.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
+
+

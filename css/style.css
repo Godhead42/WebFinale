@@ -1,0 +1,229 @@
+@media (min-width: 576px)
+                {
+                    #welcome
+                    {
+                        display: block;
+                    }
+                }
+@media (max-width: 767px) {
+  .ml-5 {
+    margin-left: 0;
+  }
+}
+body {
+    background-image: url('Back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    color: white;
+}
+
+.text-with-outline {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+}
+
+
+
+.logo img {
+    width: 300px;
+    height: auto;
+
+}
+
+
+.content-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.right{
+    position: sticky;
+    top: 0;
+
+}
+
+.frame {
+    border: 0.5px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.frame img {
+    width: 100%;
+    height: auto;
+    transition: 0.2s ease;
+    overflow: hidden;
+
+}
+
+.card{
+    overflow: hidden;
+}
+.card img{
+    transition: 0.2s ease;
+}
+.card:hover img{
+    transform: scale(1.1);
+}
+.card-body {
+    border: 1px solid white;
+}
+.book-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.global-footer{    
+    background-color: #888;
+    padding: 20px 0;
+}
+.footer-content i{
+    font-size: 30px;
+    float: left;
+    color: white;
+    padding-right: 10px;
+}
+.footer-content a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+@media (min-width: 576px) {
+    .right {
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .right {
+        position: static; /
+    }
+    
+}
+@media (max-width: 768px) { 
+    .frame-3 img,
+    .frame-3 video {
+        max-width: 100%; 
+        height: auto; 
+    }
+}
+
+@media (min-width: 576px) {
+    .right {
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .right {
+        position: static;
+    }
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-bottom-color: #333;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(43, 41, 41); 
+    border: 1px solid #1f1e1e; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: #ffffff; 
+}
+
+.dropdown-item:hover {
+    background-color: #4c3894; 
+}
+.navbar-toggler-icon {
+    background-color: rgb(65, 58, 58); 
+}
+
+.myCarousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    flex: 0 0 20%; /* Ширина и количество видимых слайдов */
+    transition: transform 0.5s;
+}
+#cartDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px; /* Добавлен отступ сверху для избежания перекрытия футера */
+
+}
+
+.cart-icon-container {
+    position: relative;
+    margin-left: 10px; /* Регулируйте отступ по вашему усмотрению */
+}
+
+.fa-shopping-cart {
+    font-size: 35px; /* Регулируйте размер иконки по вашему усмотрению */
+}
+
+.cart-badge {
+    position: absolute;
+    top: -20px;
+    right: -4px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    z-index: -1;
+}
+
+a[href="cart.html"] {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Использует цвет, унаследованный от родительского элемента */
+}
+
+a[href="cart.html"]:hover {
+    color: rgb(70, 65, 65); /* Использует цвет, унаследованный от родительского элемента при наведении */
+}
+
+#game-container {
+    width: 400px;
+    height: 800px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#primarch-image {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
